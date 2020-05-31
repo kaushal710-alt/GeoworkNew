@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite"  parallel = "tests">
+
+<listeners>
+<listener  class-name="Resources.ExtentReporterNG" />
+<listener  class-name="GeoPackPages.Listener1" />
+</listeners>
+
+<test name="TestChrome">
+<parameter name = "browser" value = "chrome" />			  
+    <classes>
+      <class name="GeoPack.FreelancerMonthly5000Test" />
+    </classes>
+  </test> <!-- Test -->
+  
+  <test name="TestFirefox">
+  <parameter name = "browser" value = "firefox" />				  
+    <classes>
+      <class name="GeoPack.ProductTest" />
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

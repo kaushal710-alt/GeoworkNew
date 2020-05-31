@@ -1,0 +1,6 @@
+18:44:36.472 [main] INFO  GeoPack.HomePage - Geoworkz logo is displayed
+18:45:41.686 [main] INFO  GeoPack.CartPage - The number of words present in the page match with the expected number of words
+19:01:26.777 [main] INFO  GeoPack.HomePage - Home link is displayed
+19:01:26.824 [main] INFO  GeoPack.HomePage - Support link is displayed
+19:01:26.867 [main] INFO  GeoPack.HomePage - Geoworkz logo is displayed
+19:02:27.315 [main] INFO  GeoPack.CartPage - The number of words present in the page match with the expected number of words
