@@ -11,7 +11,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-public class ErrorScreenShotCapture implements ITestListener{
+public class ErrorScreenShotCapture extends BaseTest implements ITestListener{
 
 	
 	public static  String imgpath="";
@@ -32,12 +32,12 @@ public class ErrorScreenShotCapture implements ITestListener{
 		// TODO Auto-generated method stub
 		
 		//BaseTest b = new BaseTest();
-		String name = result.getName();
+		//String name = result.getName();
 		//BaseTest b = new BaseTest();
-		System.out.println(BaseTest.driver);
+		//System.out.println(BaseTest.driver);
 		Random r = new Random ();
 		int num = r.nextInt(1000);
-		TakesScreenshot ts = (TakesScreenshot) BaseTest.driver;
+		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		 String dest=System.getProperty("user.dir")+"\\ScreenShots\\"+result.getName()+num+"error.png";
         File destFile=  new File(dest);

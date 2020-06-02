@@ -9,9 +9,13 @@
 	</listeners>
 	<test name="TestChrome">
 		<classes>
-			<class name="geoPackTest.FreelancerTest" />
-			<class name="geoPackTest.AgencyTest" />
-			<class name="geoPackTest.EnterPrizeTest" />
+<!-- 			<class name="geoPackTest.FreelancerTest" /> -->
+<!-- 			<class name="geoPackTest.AgencyTest" /> -->
+			<class name="geoPackTest.EnterPrizeTest" >
+			<methods>
+			<include name = "EnterprizeMonthly500000WithExtSupport"/>
+			</methods>
+			</class>
 		</classes>
 	</test>
 </suite> <!-- Suite -->

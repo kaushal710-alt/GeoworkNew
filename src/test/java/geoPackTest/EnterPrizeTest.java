@@ -46,87 +46,87 @@ public class EnterPrizeTest extends BaseTest {
 	
 	
 	@Test (groups= {"Smoke", "Regression"} , priority=2)
-	public void EnterprizeAnnually10000SmallestNoExtSupport() throws InterruptedException 
+	public void EnterprizeAnnually10000SmallestNoExtSupport() throws InterruptedException, IOException 
 	{
 		UtilityFunctions.checkoutProcessWithoutExtSupportEnterPrize();
 	}
 	
 	@Test (groups= {"Regression"} , priority=3)
-	public void EnterprizeAnnually10000SmallestWithExtSupport() throws InterruptedException 
+	public void EnterprizeAnnually10000SmallestWithExtSupport() throws InterruptedException, IOException 
 	{
 		UtilityFunctions.checkoutProcessWithExtSupportEnterPrize();
 	}
 	
 
 	@Test (groups= {"Regression"} , priority=4)
-	public void EnterprizeMonthly250000NoExtSupport() throws InterruptedException 
+	public void EnterprizeMonthly250000NoExtSupport() throws InterruptedException, IOException 
 	{
 		UtilityFunctions.checkoutProcessWithoutExtSupportEnterPrize();
 	}
 	
 	@Test  (groups= {"Regression"} , priority=5)
-	public void EnterprizeMonthly250000WithExtSupport() throws InterruptedException 
+	public void EnterprizeMonthly250000WithExtSupport() throws InterruptedException, IOException 
 	{
 		UtilityFunctions.checkoutProcessWithExtSupportEnterPrize();
 	}
 	
 	
 	@Test (groups= {"Regression"} , priority=6)
-	public void EnterprizeAnnually250000NoExtSupport() throws InterruptedException 
+	public void EnterprizeAnnually250000NoExtSupport() throws InterruptedException, IOException 
 	{
 		UtilityFunctions.checkoutProcessWithoutExtSupportEnterPrize();
 	}
 	
 	@Test (groups= {"Regression"} , priority=7)
-	public void EnterprizeAnnually250000WithExtSupport() throws InterruptedException 
+	public void EnterprizeAnnually250000WithExtSupport() throws InterruptedException, IOException 
 	{
 		UtilityFunctions.checkoutProcessWithExtSupportEnterPrize();
 	}
 	
 	@Test (groups= {"Regression"} , priority=8)
-	public void EnterprizeMonthly500000NoExtSupport() throws InterruptedException 
+	public void EnterprizeMonthly500000NoExtSupport() throws InterruptedException, IOException 
 	{
 		UtilityFunctions.checkoutProcessWithoutExtSupportEnterPrize();
 	}
 	
 	@Test (groups= {"Regression"} , priority=9)
-	public void EnterprizeMonthly500000WithExtSupport() throws InterruptedException 
+	public void EnterprizeMonthly500000WithExtSupport() throws InterruptedException, IOException 
 	{
 		UtilityFunctions.checkoutProcessWithExtSupportEnterPrize();
 	}
 	
 	@Test (groups= {"Regression"} , priority=10)
-	public void EnterprizeAnnually500000NoExtSupport() throws InterruptedException 
+	public void EnterprizeAnnually500000NoExtSupport() throws InterruptedException, IOException 
 	{
 		UtilityFunctions.checkoutProcessWithoutExtSupportEnterPrize();
 	}
 	
 	@Test (groups= {"Smoke" ,"Regression"} , priority=11)
-	public void EnterprizeAnnually500000WithExtSupport() throws InterruptedException 
+	public void EnterprizeAnnually500000WithExtSupport() throws InterruptedException, IOException 
 	{
 		UtilityFunctions.checkoutProcessWithExtSupportEnterPrize();
 	}
 	
 	@Test (groups= {"Regression"} , priority=12)
-	public void EnterprizeMonthly1000000NoExtSupport() throws InterruptedException 
+	public void EnterprizeMonthly1000000NoExtSupport() throws InterruptedException, IOException 
 	{
 		UtilityFunctions.checkoutProcessWithoutExtSupportEnterPrize();
 	}
 	
 	@Test (groups= {"Regression"} , priority=13)
-	public void EnterprizeMonthly1000000WithExtSupport() throws InterruptedException 
+	public void EnterprizeMonthly1000000WithExtSupport() throws InterruptedException, IOException 
 	{
 		UtilityFunctions.checkoutProcessWithExtSupportEnterPrize();
 	}
 	
 	@Test (groups= {"Regression"} , priority=14)
-	public void EnterprizeAnnually1000000NoExtSupport() throws InterruptedException 
+	public void EnterprizeAnnually1000000NoExtSupport() throws InterruptedException, IOException 
 	{
 		UtilityFunctions.checkoutProcessWithoutExtSupportEnterPrize();
 	}
 	
 	@Test (groups= {"Regression"} , priority=15)
-	public void EnterprizeAnnually1000000WithExtSupport() throws InterruptedException 
+	public void EnterprizeAnnually1000000WithExtSupport() throws InterruptedException, IOException 
 	{
 		UtilityFunctions.checkoutProcessWithExtSupportEnterPrize();
 	}

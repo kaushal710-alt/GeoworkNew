@@ -1,8 +1,23 @@
 package geoPackPages;
 
+import java.io.IOException;
+
 public class UtilityFunctions extends BaseTest {
 
 	static CartPage cp;
+	static CheckOutFormPage cofp;
+	
+	public static void userDetailsFormPage () throws IOException, InterruptedException 
+	{
+		cofp = new CheckOutFormPage();
+		cofp.fillTheFormPage();
+		cofp.checkSubscriptionCheckbox();
+		
+		Thread.sleep(2000);
+		cofp.checkSubscriptionCheckbox1();
+		cofp.clickSubmitButton();
+		
+	}
 
 	public static void freelancerCheckOut() throws InterruptedException {
 		HomePage hp = new HomePage(driver);
@@ -35,72 +50,83 @@ public class UtilityFunctions extends BaseTest {
 		cp = new CartPage();	
 	}
 
-	public static void checkoutProcessWithoutExtSupport() throws InterruptedException {
+	public static void checkoutProcessWithoutExtSupport() throws InterruptedException, IOException {
+		
 		freelancerCheckOut();
-
 		cp.clickCheckoutButton();
+		userDetailsFormPage();
+		
 	}
 
-	public static void checkoutProcessWithExtSupport() throws InterruptedException {
+	public static void checkoutProcessWithExtSupport() throws InterruptedException, IOException {
 
 		freelancerCheckOut();
 		cp.supportDropDown();
 		cp.clickCheckoutButton();
+		userDetailsFormPage();
 	}
 
-	public static void checkoutProcessWithoutExtSupportAgency() throws InterruptedException {
+	public static void checkoutProcessWithoutExtSupportAgency() throws InterruptedException, IOException {
 		
 		agencyCheckout();
 		cp.clickCheckoutButton();
+		userDetailsFormPage();
 	}
 
-	public static void checkoutProcessWithoutExtSupportAgency(int i) throws InterruptedException {
+	public static void checkoutProcessWithoutExtSupportAgency(int i) throws InterruptedException, IOException {
 		agencyCheckout();
 		cp.addAdditionalLicense(i);
 		cp.clickCheckoutButton();
+		userDetailsFormPage();
 	}
 
-	public static void checkoutProcessWithExtSupportAgency() throws InterruptedException {
+	public static void checkoutProcessWithExtSupportAgency() throws InterruptedException, IOException {
 
 		agencyCheckout();
 		cp.supportDropDown();
 		cp.clickCheckoutButton();
+		userDetailsFormPage();
 	}
 
-	public static void checkoutProcessWithExtSupportAgency(int i) throws InterruptedException {
+	public static void checkoutProcessWithExtSupportAgency(int i) throws InterruptedException, IOException {
 
 		agencyCheckout();
 		cp.supportDropDown();
 		cp.addAdditionalLicense(i);
 		cp.clickCheckoutButton();
+		userDetailsFormPage();
 	}
 
-	public static void checkoutProcessWithoutExtSupportEnterPrize() throws InterruptedException {
+	public static void checkoutProcessWithoutExtSupportEnterPrize() throws InterruptedException, IOException {
 		
 		EnterPrizeCheckout();
 		cp.clickCheckoutButton();
+		userDetailsFormPage();
 	}
 	
-public static void checkoutProcessWithoutExtSupportEnterPrize(int i) throws InterruptedException {
+public static void checkoutProcessWithoutExtSupportEnterPrize(int i) throws InterruptedException, IOException {
 		
 		EnterPrizeCheckout();
 		cp.addAdditionalLicense(i);
 		cp.clickCheckoutButton();
+		userDetailsFormPage();
 	}
 
-	public static void checkoutProcessWithExtSupportEnterPrize() throws InterruptedException {
+	public static void checkoutProcessWithExtSupportEnterPrize() throws InterruptedException, IOException {
 
 		EnterPrizeCheckout();
 		cp.supportDropDown();
 		cp.clickCheckoutButton();
+		userDetailsFormPage();
 	}
 	
-	public static void checkoutProcessWithExtSupportEnterPrize(int i) throws InterruptedException {
+	public static void checkoutProcessWithExtSupportEnterPrize(int i) throws InterruptedException, IOException {
 
 		EnterPrizeCheckout();
 		cp.supportDropDown();
 		cp.addAdditionalLicense(i);
 		cp.clickCheckoutButton();
+		userDetailsFormPage();
 	}
 
 //	public static String getTestDataFromXMLFile(String strXpath) {

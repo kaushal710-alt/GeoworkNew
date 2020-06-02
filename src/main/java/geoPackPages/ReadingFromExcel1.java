@@ -51,7 +51,7 @@ public class ReadingFromExcel1  {
 							counter++;
 						}
 						
-						System.out.println(col);
+						//System.out.println(col);
 					
 		
 						while (row.hasNext()) 
@@ -85,6 +85,64 @@ public class ReadingFromExcel1  {
 					}
 		}
 		return arrayList;
+	}
+	public HashMap <String, String> userDetailsForm () throws IOException
+	{
+		File file = new  File (System.getProperty("user.dir")+ "\\src\\main\\java\\Resources\\TestData2.xlsx");
+		FileInputStream fis = new FileInputStream (file);
+		XSSFWorkbook excel = new XSSFWorkbook (fis);
+		int noOfSheets = excel.getNumberOfSheets();
+		int k=0;
+		HashMap <String,String> map = new HashMap <String , String>(); 
+		
+		for (int i=0;i<noOfSheets;i++) 
+		{
+			
+			if (excel.getSheetName(i).equalsIgnoreCase("TestDataSheet")) 
+			{
+				XSSFSheet sheet = excel.getSheetAt(i);
+				
+				Iterator <Row> itr = sheet.iterator();
+				
+				Row firstRow = itr.next();
+				Row secondRow = itr.next();
+				
+				String username = getUserName(secondRow,k);
+				map.put("UserName", username);
+				
+				String password = getPassword(secondRow,k);
+				map.put("Password", password);
+				
+				String repassword = getRetypePassword(secondRow,k);
+				map.put("ReTypePassword", repassword);
+				
+				String tenancy = getTenancy(secondRow,k);
+				map.put("Tenancy", tenancy);
+				
+				String fname = getFirstName(secondRow,k);
+				map.put("FirstName", fname);
+				
+				String lname = getLastName(secondRow,k);
+				map.put("LastName", lname);
+				
+				String email = getEmail(secondRow,k);
+				map.put("Email Address", email);
+				
+				String address = getAddress(secondRow,k);
+				map.put("Address", address);
+				
+				String city = getCity(secondRow,k);
+				map.put("City", city);
+				
+				String zipcode = getZipCode(secondRow,k);
+				map.put("ZipCode", zipcode);
+				
+				String phone = getPhone(secondRow,k);
+				map.put("Phone", phone);
+			}
+		}
+		
+		return map;
 	}
 public HashMap<String, String> verifyCartPageDetails (String planType) throws IOException 
 {
@@ -159,6 +217,221 @@ public HashMap<String, String> verifyCartPageDetails (String planType) throws IO
 	
 	
 }
+public String getUserName(Row secondRow,int k) {
+	// TODO Auto-generated method stub
+	
+	String username="";
+	
+	if (secondRow.getCell(k).getCellTypeEnum()==CellType.STRING) 
+	{
+		username = secondRow.getCell(k).getStringCellValue();
+		
+	}
+	else 
+	{
+		username = NumberToTextConverter.toText(secondRow.getCell(k).getNumericCellValue());
+		
+    }
+	
+	return username;
+	
+}
+
+public String getPassword(Row secondRow,int k) {
+	// TODO Auto-generated method stub
+	
+	String password="";
+	
+	if (secondRow.getCell(k+1).getCellTypeEnum()==CellType.STRING) 
+	{
+		password = secondRow.getCell(k+1).getStringCellValue();
+		
+	}
+	else 
+	{
+		password = NumberToTextConverter.toText(secondRow.getCell(k+1).getNumericCellValue());
+		
+    }
+	
+	return password;
+	
+}
+
+public String getRetypePassword(Row secondRow,int k) {
+	// TODO Auto-generated method stub
+	
+	String repassword="";
+	
+	if (secondRow.getCell(k+2).getCellTypeEnum()==CellType.STRING) 
+	{
+		repassword = secondRow.getCell(k+2).getStringCellValue();
+		
+	}
+	else 
+	{
+		repassword = NumberToTextConverter.toText(secondRow.getCell(k+2).getNumericCellValue());
+		
+    }
+	return repassword;
+	
+}
+
+public String getTenancy(Row secondRow,int k) {
+	// TODO Auto-generated method stub
+	
+	String tenancy="";
+	
+	if (secondRow.getCell(k+3).getCellTypeEnum()==CellType.STRING) 
+	{
+		tenancy = secondRow.getCell(k+3).getStringCellValue();
+		
+	}
+	else 
+	{
+		tenancy = NumberToTextConverter.toText(secondRow.getCell(k+3).getNumericCellValue());
+		
+    }
+	return tenancy;
+	
+}
+
+
+public String getFirstName(Row secondRow,int k) {
+	// TODO Auto-generated method stub
+	
+	String firstname="";
+	
+	if (secondRow.getCell(k+4).getCellTypeEnum()==CellType.STRING) 
+	{
+		firstname = secondRow.getCell(k+4).getStringCellValue();
+		
+	}
+	else 
+	{
+		firstname = NumberToTextConverter.toText(secondRow.getCell(k+4).getNumericCellValue());
+		
+    }
+	return firstname;
+	
+}
+
+public String getLastName(Row secondRow,int k) {
+	// TODO Auto-generated method stub
+	
+	String lastname="";
+	
+	if (secondRow.getCell(k+5).getCellTypeEnum()==CellType.STRING) 
+	{
+		lastname = secondRow.getCell(k+5).getStringCellValue();
+		
+	}
+	else 
+	{
+		lastname = NumberToTextConverter.toText(secondRow.getCell(k+5).getNumericCellValue());
+		
+    }
+	return lastname;
+	
+}
+
+public String getEmail(Row secondRow,int k) {
+	// TODO Auto-generated method stub
+	
+	String email="";
+	
+	if (secondRow.getCell(k+6).getCellTypeEnum()==CellType.STRING) 
+	{
+		email = secondRow.getCell(k+6).getStringCellValue();
+		
+	}
+	else 
+	{
+		email = NumberToTextConverter.toText(secondRow.getCell(k+6).getNumericCellValue());
+		
+    }
+	return email;
+	
+}
+
+public String getAddress(Row secondRow,int k) {
+	// TODO Auto-generated method stub
+	
+	String address="";
+	
+	if (secondRow.getCell(k+7).getCellTypeEnum()==CellType.STRING) 
+	{
+		address = secondRow.getCell(k+7).getStringCellValue();
+		
+	}
+	else 
+	{
+		address = NumberToTextConverter.toText(secondRow.getCell(k+7).getNumericCellValue());
+		
+    }
+	return address;
+	
+}
+
+public String getCity(Row secondRow,int k) {
+	// TODO Auto-generated method stub
+	
+	String city="";
+	
+	if (secondRow.getCell(k+8).getCellTypeEnum()==CellType.STRING) 
+	{
+		city = secondRow.getCell(k+8).getStringCellValue();
+		
+	}
+	else 
+	{
+		city = NumberToTextConverter.toText(secondRow.getCell(k+8).getNumericCellValue());
+		
+    }
+	return city;
+	
+}
+
+public String getZipCode(Row secondRow,int k) {
+	// TODO Auto-generated method stub
+	
+	String zip="";
+	
+	if (secondRow.getCell(k+9).getCellTypeEnum()==CellType.STRING) 
+	{
+		zip = secondRow.getCell(k+9).getStringCellValue();
+		
+	}
+	else 
+	{
+		zip = NumberToTextConverter.toText(secondRow.getCell(k+9).getNumericCellValue());
+		
+    }
+	return zip;
+	
+}
+
+public String getPhone(Row secondRow,int k) {
+	// TODO Auto-generated method stub
+	
+	String phone="";
+	
+	if (secondRow.getCell(k+10).getCellTypeEnum()==CellType.STRING) 
+	{
+		phone = secondRow.getCell(k+10).getStringCellValue();
+		
+	}
+	else 
+	{
+		phone = NumberToTextConverter.toText(secondRow.getCell(k+10).getNumericCellValue());
+		
+    }
+	return phone;
+	
+}
+
+
+
+
 public String getPlanName(Row row, int k, String planType) {
 	// TODO Auto-generated method stub
 	

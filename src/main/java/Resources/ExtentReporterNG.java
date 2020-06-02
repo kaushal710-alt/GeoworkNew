@@ -100,34 +100,34 @@ public class ExtentReporterNG extends ErrorScreenShotCapture implements IReporte
         }
     }
     
-    public void getScreenshot(String screen) throws IOException
-	{
-		 //Convert web driver object to TakeScreenshot
-
-        TakesScreenshot scrShot =((TakesScreenshot) BaseTest.driver);
-
-        //Call getScreenshotAs method to create image file
-        Random r = new Random ();
-		int num = r.nextInt(1000);
-
-                File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
-
-            //Move image file to new destination
-
-                String dest=System.getProperty("user.dir")+"\\ScreenShots\\"+screen+num+"error.png";
-                File DestFile=new File(dest);
-                
-                String imgpath=dest;
-                
-
-                //Copy file at destination
-
-                FileUtils.copyFile(SrcFile, DestFile);
-                
-                String img=test.addScreenCapture(imgpath);
-		
-		test.log(LogStatus.FAIL, img);
-	}
+//    public void getScreenshot(String screen) throws IOException
+//	{
+//		 //Convert web driver object to TakeScreenshot
+//
+//        TakesScreenshot scrShot =((TakesScreenshot) BaseTest.driver);
+//
+//        //Call getScreenshotAs method to create image file
+//        Random r = new Random ();
+//		int num = r.nextInt(1000);
+//
+//                File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+//
+//            //Move image file to new destination
+//
+//                String dest=System.getProperty("user.dir")+"\\ScreenShots\\"+screen+num+"error.png";
+//                File DestFile=new File(dest);
+//                
+//                String imgpath=dest;
+//                
+//
+//                //Copy file at destination
+//
+//                FileUtils.copyFile(SrcFile, DestFile);
+//                
+//                String img=test.addScreenCapture(imgpath);
+//		
+//		test.log(LogStatus.FAIL, img);
+//	}
  
     private Date getTime(long millis) {
         Calendar calendar = Calendar.getInstance();

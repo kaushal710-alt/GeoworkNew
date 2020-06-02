@@ -7,20 +7,10 @@
   </listeners>
   <test thread-count="5" name="TestChrome(failed)">
     <classes>
-      <class name="geoPackTest.AgencyTest">
-        <methods>
-          <include name="AgencyAnnually10000WithExtSupport"/>
-          <include name="tearDown"/>
-          <include name="initializeDriver"/>
-          <include name="AgencyAnnually10000NoExtSupport"/>
-        </methods>
-      </class> <!-- geoPackTest.AgencyTest -->
       <class name="geoPackTest.EnterPrizeTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="EnterprizeAnnually10000SmallestWithExtSupport"/>
+          <include name="EnterprizeMonthly500000WithExtSupport"/>
           <include name="initializeDriver"/>
-          <include name="EnterprizeAnnually10000SmallestNoExtSupport"/>
         </methods>
       </class> <!-- geoPackTest.EnterPrizeTest -->
     </classes>
